@@ -52,3 +52,10 @@
     font-family: Segoe UI Light;
     font-size: 14px;
 }
+
+.json_property > a
+{
+    flex: 1;
+    font-family: Segoe UI Light;
+    font-size: 14px;
+}
