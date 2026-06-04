@@ -1,18 +1,24 @@
 {
   "name": "pcf-project",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Project containing your PowerApps Component Framework (PCF) control.",
   "scripts": {
-    "build": "pcf-scripts build",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && pcf-scripts build",
     "clean": "pcf-scripts clean",
-    "rebuild": "pcf-scripts rebuild",
-    "start": "pcf-scripts start"
+    "rebuild": "set NODE_OPTIONS=--openssl-legacy-provider && pcf-scripts rebuild",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && pcf-scripts start"
   },
   "dependencies": {
     "@types/node": "^10.12.18",
-    "@types/powerapps-component-framework": "^1.2.0"
+    "@types/powerapps-component-framework": "^1.2.0",
+    "@types/react": "^17.0.93",
+    "@types/react-dom": "^17.0.26",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.60.1",
+    "@typescript-eslint/parser": "^8.60.1",
     "pcf-scripts": "^1",
     "pcf-start": "^1"
   }

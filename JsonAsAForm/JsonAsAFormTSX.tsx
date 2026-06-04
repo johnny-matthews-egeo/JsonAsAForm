@@ -1,5 +1,5 @@
-import React = require("react");
-import ReactDOM = require("react-dom");
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 
 export interface IJsonAsAFormTSXProps {
     title: string,
@@ -25,6 +25,23 @@ export class JsonAsAFormTSX extends React.Component<IJsonAsAFormTSXProps, IJsonA
         };
 
         this.onLoad();
+    }
+
+    isValidUrl(string: string): boolean {
+        try {
+            new URL(string);
+            return true;
+        } catch (_) {
+            return false;
+        }
+    }
+
+    renderFieldValue(value: any): JSX.Element {
+        if (typeof value === "string" && this.isValidUrl(value)) {
+            const anchorText = value.length > 50 ? value.substring(0, 47) + "..." : value;
+            return <a href={value} target="_blank" rel="noopener noreferrer">{anchorText}</a>;
+        }
+        return <input value={value} readOnly />;
     }
 
     render(): JSX.Element {
@@ -65,7 +82,7 @@ export class JsonAsAFormTSX extends React.Component<IJsonAsAFormTSXProps, IJsonA
             else {
                 if (typeof value === "string" && value.indexOf("/Date(") > -1)
                     value = this.getDateFromAspNetFormat(value);
-                this.items.push(<div className="json_property"><label>{key_}</label><input value={value} /></div>);
+                this.items.push(<div className="json_property"><label>{key_}</label>{this.renderFieldValue(value)}</div>);
             }
         });
 

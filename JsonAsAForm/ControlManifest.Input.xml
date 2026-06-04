@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="VinnyBComponents" constructor="JsonAsAForm" version="0.0.1" display-name-key="JsonAsAForm" description-key="JsonAsAForm description" control-type="standard">
+  <control namespace="VinnyBComponents" constructor="JsonAsAForm" version="0.0.2" display-name-key="JsonAsAForm" description-key="JsonAsAForm description" control-type="standard">
       <type-group name="text">
         <type>SingleLine.Text</type>
         <type>SingleLine.TextArea</type>

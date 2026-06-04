@@ -1,8 +1,8 @@
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
 import { isMainThread } from "worker_threads";
 import { JsonAsAFormTSX } from "./JsonAsAFormTSX";
-import ReactDOM = require("react-dom");
-import React = require("react");
+import * as ReactDOM from "react-dom";
+import * as React from "react";
 
 export class JsonAsAForm implements ComponentFramework.StandardControl<IInputs, IOutputs> {
 
